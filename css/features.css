@@ -1,0 +1,47 @@
+.features-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 120px 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: row;
+    /* Змінено з column на row для рядка */
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+    /* Додано для коректного розрахунку ширини карток */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-item {
+    /* Розрахунок для 4 колонок з урахуванням 3 проміжків по 24px */
+    width: calc((100% - 3 * 24px) / 4);
+}
+
+/* Об'єднано стилі заголовка .features-subtitle та h3 */
+.features-subtitle,
+.features-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-align: left;
+}
+
+.features-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}

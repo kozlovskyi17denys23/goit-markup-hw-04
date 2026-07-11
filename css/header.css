@@ -1,0 +1,75 @@
+/* 1. Хедер розтягується на всю ширину та не має фіксованої ширини */
+.page-header {
+    width: 100%;
+    border-bottom: 1px solid #e7e9fc;
+    background-color: #ffffff;
+}
+
+/* 4. Висоту прибрано, вона формується внутрішнім простором лінків */
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+/* 2. Фіксована відстань через margin замість розмитого space-between */
+.logo-header {
+    color: #2e2f42;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 76px;
+    /* Фіксований відступ праворуч від логотипу */
+}
+
+/* Авто-алайн штовхає контакти праворуч, зберігаючи фіксовану відстань між елементами */
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+    margin-right: auto;
+    /* Магічний маржин штовхає контакти в самий край, фіксуючи навігацію */
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+/* 3. Замість height: 72px використовуємо вертикальні паддінги */
+.nav-link,
+.contacts-link {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    /* Формує висоту хедера (24px зверху) */
+    padding-bottom: 24px;
+    /* Формує висоту хедера (24px знизу) */
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #2e2f42;
+}
+
+.contacts-link {
+    font-weight: 400;
+    color: #434455;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
+    color: #404bbf;
+}
