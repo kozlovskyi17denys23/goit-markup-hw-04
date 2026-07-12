@@ -10,7 +10,7 @@
 /* Флекс-контейнер для побудови елементів в один рядок */
 .footer-container {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     /* Вирівнювання по базовій лінії тексту */
 }
 
