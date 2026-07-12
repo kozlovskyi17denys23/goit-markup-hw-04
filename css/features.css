@@ -1,47 +1,77 @@
+/* ================= FEATURES SECTION STYLES ================= */
+
+/* Основні відступи для всієї секції */
 .features-section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
     padding: 120px 0;
-    box-sizing: border-box;
-    background-color: #ffffff;
 }
 
+/* Флекс-контейнер для побудови карток в один рядок */
 .features-list {
     display: flex;
-    flex-direction: row;
-    /* Змінено з column на row для рядка */
-    flex-wrap: wrap;
     gap: 24px;
-    width: 100%;
-    /* Додано для коректного розрахунку ширини карток */
+    /* Відступи між картками за макетом */
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
+/* Розрахунок ширини для кожної з 4-х карток */
 .features-item {
-    /* Розрахунок для 4 колонок з урахуванням 3 проміжків по 24px */
-    width: calc((100% - 3 * 24px) / 4);
+    flex-basis: calc((100% - 3 * 24px) / 4);
 }
 
-/* Об'єднано стилі заголовка .features-subtitle та h3 */
-.features-subtitle,
-.features-item h3 {
-    margin-top: 0;
+/* Контейнер-рамка для іконки (сірий прямокутник) */
+.features-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    /* Тонка сіра рамка навколо іконки */
     margin-bottom: 8px;
-    font-weight: 500;
+    /* Відступ знизу до заголовка h3 */
+}
+
+/* Оформлення SVG іконки всередині контейнера */
+.features-icon {
+    fill: #2e2f42;
+}
+
+/* Підзаголовки (Strategy, Punctuality тощо) */
+.features-subtitle {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
-    text-align: left;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
+/* Основний текст опису */
 .features-text {
-    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    margin: 0;
+}
+
+/* Стили для повного приховування h2 (доступність для скрінрідерів) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }

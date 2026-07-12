@@ -1,74 +1,126 @@
-/* 1. Хедер розтягується на всю ширину та не має фіксованої ширини */
+/* Базові скидання для списків та посилань (якщо їх ще немає у вашому проекті) */
+.nav-list,
+.contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo,
+.nav-link,
+.contacts-link {
+    text-decoration: none;
+}
+
+/* Скидання системних стилів для тегу address */
+.contacts {
+    font-style: normal;
+}
+
+/* ================= HEADER STYLES ================= */
+
+/* Нижня лінія хедера */
 .page-header {
-    width: 100%;
     border-bottom: 1px solid #e7e9fc;
     background-color: #ffffff;
 }
 
-/* 4. Висоту прибрано, вона формується внутрішнім простором лінків */
+/* Флекс-контейнер для вирівнювання елементів в один рядок */
 .header-container {
     display: flex;
     align-items: center;
+    max-width: 1158px;
+    /* Або ваша ширина контейнера */
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* 2. Фіксована відстань через margin замість розмитого space-between */
+/* Логотип */
 .logo-header {
+    font-family: "Raleway", sans-serif;
+    /* Поширений шрифт для цього макету */
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     color: #2e2f42;
-    text-decoration: none;
-    font-weight: 700;
+    /* Темний колір для "Studio" */
     margin-right: 76px;
-    /* Фіксований відступ праворуч від логотипу */
+    /* Відступ від логотипу до меню */
 }
 
-/* Авто-алайн штовхає контакти праворуч, зберігаючи фіксовану відстань між елементами */
+.logo-accent {
+    color: #4d5ae5;
+    /* Синій колір для "Web" */
+}
+
+/* Навігація */
+.navigation {
+    margin-right: auto;
+    /* Головний фокус: штовхає контакти в крайню праву сторону */
+}
+
 .nav-list {
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     gap: 40px;
-    margin-right: auto;
-    /* Магічний маржин штовхає контакти в самий край, фіксуючи навігацію */
-}
-
-.contacts-list {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 40px;
-}
-
-/* 3. Замість height: 72px використовуємо вертикальні паддінги */
-.nav-link,
-.contacts-link {
-    display: flex;
-    align-items: center;
-    padding-top: 24px;
-    /* Формує висоту хедера (24px зверху) */
-    padding-bottom: 24px;
-    /* Формує висоту хедера (24px знизу) */
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Відступи між пунктами меню */
 }
 
 .nav-link {
+    display: block;
+    padding: 24px 0;
+    /* Вертикальні падінги для клікабельності */
     font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: #2e2f42;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ховер та фокус для посилань меню */
+.nav-link:hover,
+.nav-link:focus {
+    color: #404bbf;
+}
+
+/* Синя лінія підкреслення для активного пункту (наприклад, Features) */
+/* Ви можете вручну додати клас .current в HTML тому посиланню, де зараз перебуває користувач */
+.nav-link.current {
+    color: #404bbf;
+}
+
+.nav-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    /* Притискає лінію до нижньої рамки хедера */
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+}
+
+/* Контакти */
+.contacts-list {
+    display: flex;
+    gap: 40px;
+    /* Відступи між поштою та телефоном */
 }
 
 .contacts-link {
-    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: #434455;
+    /* Сіріший колір для контактів */
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link:hover,
-.nav-link:focus,
+/* Ховер та фокус для контактів */
 .contacts-link:hover,
 .contacts-link:focus {
     color: #404bbf;

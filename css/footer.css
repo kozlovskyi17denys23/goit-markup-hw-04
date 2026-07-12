@@ -1,18 +1,109 @@
+/* ================= FOOTER STYLES ================= */
+
 .page-footer-bottom {
     background-color: #2e2f42;
+    /* Темно-синій колір фону */
     padding: 100px 0;
+    /* Вертикальні падінги футера */
 }
 
+/* Флекс-контейнер для побудови елементів в один рядок */
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    /* Вирівнювання по базовій лінії тексту */
+}
+
+/* Лівий блок (лого + опис) */
+.footer-info-block {
+    margin-right: 120px;
+    /* Відступ праворуч до блоку соцмереж за макетом */
+}
+
+/* Логотип у футері */
 .logo-footer {
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #f4f4fd;
+    /* Світле слово "Studio" */
     display: inline-block;
     margin-bottom: 16px;
-    color: #f4f4fd;
+    /* Відступ вниз до параграфа */
+    text-decoration: none;
 }
 
+/* Сірий текст опису */
 .footer-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+    /* Огранічуємо ширину, щоб текст переносився на три рядки */
+    margin: 0;
+}
+
+/* --- Правий блок (Соцмережі) --- */
+
+/* Заголовок "Social media" */
+.social-media-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    /* Білий колір тексту */
+    margin-top: 0;
+    margin-bottom: 16px;
+    /* Відступ до іконок */
+}
+
+/* Список круглих іконок */
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    /* Проміжок між кружечками */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-socials-item {
+    width: 40px;
+    height: 40px;
+}
+
+/* Круглі посилання для соцмереж */
+.footer-socials-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    /* Початковий синій колір */
+    border-radius: 50%;
+    /* Робимо ідеальне коло */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* Плавна зміна кольору */
+}
+
+/* Ховер та фокус для іконок у футері */
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+    background-color: #31d0aa;
+    /* Зелений колір при наведенні за макетом WebStudio */
+}
+
+/* Стиль внутрішньої SVG іконки */
+.footer-socials-icon {
+    fill: #f4f4fd;
+    /* Світло-сірий колір самої іконки */
 }
